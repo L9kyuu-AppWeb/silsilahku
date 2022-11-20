@@ -1,0 +1,27 @@
+1. buka file host pada link dibawah ini, seperti sublime text jalankan sebagai administrator
+	C:\Windows\System32\drivers\etc\
+tambahkan kode ini dipaling bawah
+	127.0.0.1			localhost
+	127.0.0.1			silsilah.nine
+
+2. Buka file httpd-vhosts pada link dibawah ini
+	xampp\apache\conf\extra
+tambahkan kode ini dipaling bawah
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot "/xampp/htdocs/"
+    ServerName localhost
+    ErrorLog "logs/localhost-error.log"
+    CustomLog "logs/localhost-access.log" common
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@silsilah.nine
+    DocumentRoot "/xampp/htdocs/silsilah.nine"
+    ServerName silsilah.nine
+    ErrorLog "logs/silsilah.nine-error.log"
+    CustomLog "logs/silsilah.nine-access.log" common
+</VirtualHost>
+
+3. Start atau Restart apache di xampp...
